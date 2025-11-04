@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisa de Dados</title>
+    <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon_avelino.ico" type="image/x-icon">
+</head>
+<body>
+
+    <div class="container">
+        <div class="cabecalho-principal">
+        <img src="logo.png" alt="Logo Biblioteca Avelino Antonio Vieira" class="logo-titulo">
+        <h1>SGBD Biblioteca Avelino Antonio Vieira</h1>
+    </div>
+        <div class="caixa-busca">
+            <input type="text" id="buscaEntrada" placeholder="Digite sua pesquisa...">
+            <button id="buscarBotao">Pesquisar</button>
+        </div>
+      <div class="tabela-responsiva">
+        <table id="dadosTabela">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome_livro</th>
+                    <th>Genero_livro</th>
+                    <th>Quantidade</th>
+                    <th>Paginas</th>
+                    <th>Autor</th>
+                    <th>Ano_publicado</th>
+                </tr>
+            </thead>
+            <tbody id="dadosCorpo">
+                </tbody>
+        </table>
+        <div id="paginacaoControles" class="paginacao">
+            </div>
+      </div>
+      <p id="contadorLivros"></p>
+        <p id="semResultado" class="hidden">Nenhum resultado encontrado.</p>
+    </div>
+
+    <script src="sketch.js"></script>
+</body>
+</html>

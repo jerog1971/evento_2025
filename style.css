@@ -1,0 +1,223 @@
+/* Correção do Box Model para garantir que padding e borda não causem transbordamento */
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(223,223,223);
+    color: black;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1900px;
+    margin: auto;
+    background-color: white;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+h1 {
+    /*text-align: center;*/
+    color: rgb(85,93,138);
+}
+
+.caixa-busca {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#buscaEntrada {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+}
+
+#contadorLivros {
+    /* Centraliza o texto no container */
+    text-align: center;
+    
+    /* Aumenta o tamanho da fonte para destacar a informação */
+    font-size: 1.2em;
+    
+    /* Define o peso da fonte para chamar mais atenção */
+    font-weight: bold;
+    
+    /* Adiciona margem superior para separá-lo da tabela */
+    margin-top: 15px;
+    
+    /* Usa a cor principal do seu projeto (azul escuro) */
+    color: rgb(85,93,138); 
+    
+    /* Adiciona um pequeno padding e borda sutil para dar um "recorte" */
+    padding: 10px;
+    border: 1px dashed lightgray;
+    border-radius: 5px;
+    
+    /* Garante que ele ocupe a largura total do container */
+    width: 100%;
+    /* Opcional: Se quiser um fundo para destacá-lo ainda mais */
+    /* background-color: #f0f0f0; */
+}
+
+#buscarBotao {
+    padding: 10px 15px;
+    border: none;
+    background-color: rgb(85,93,138);
+    color: white;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#buscarBotao:hover {
+    background-color: blue;
+}
+
+#dadosTabela {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#dadosTabela th, #dadosTabela td {
+    border: 1px solid black;
+    padding: 12px;
+    text-align: left;
+}
+
+#dadosTabela th {
+    background-color: lightgray;
+}
+
+#semResultado {
+    text-align: center;
+    font-weight: bold;
+    color: red;
+    margin-top: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Estilos para o novo container da logo e título */
+.cabecalho-principal {
+    display: flex; /* Permite que os itens fiquem lado a lado */
+    align-items: center; /* Centraliza verticalmente a logo com o texto */
+    justify-content: center; /* Centraliza todo o bloco (logo + título) */
+    margin-bottom: 20px; /* Adiciona um espaço abaixo do cabeçalho */
+}
+
+/* Estilos para a imagem da logo */
+.logo-titulo {
+    /* Ajuste o tamanho conforme a sua logo. 50px é um bom ponto de partida. */
+    width: 70px; 
+    height: 70px;
+    
+    /* Adiciona um espaço entre a logo e o texto do título */
+    margin-right: 15px; 
+}
+/* ============================================== */
+/* ========== INÍCIO DO CSS RESPONSIVO (AJUSTADO) ========== */
+/* ============================================== */
+
+@media screen and (max-width: 768px) {
+    
+    /* 1. Ajuste Geral de Padding e Título */
+    .container {
+        padding: 15px 15px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+        text-align: center;
+    }
+
+    .cabecalho-principal {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .logo-titulo {
+        width: 60px;
+        height: 60px;
+        margin-right: 10px;
+    }
+
+    /* 2. CORREÇÃO: Caixa de Busca Empilhada e Alinhada */
+    .caixa-busca {
+        flex-direction: column;
+        align-items: stretch; /* Ocupa 100% da largura */
+        margin-bottom: 15px;
+    }
+
+    #buscaEntrada, #buscarBotao {
+        border-radius: 5px; /* Remoção de cantos específicos para blocos empilhados */
+        width: 100%;
+    }
+    
+    #buscaEntrada {
+        margin-bottom: 5px; /* Espaço entre input e botão */
+    }
+
+    #buscarBotao {
+        margin-bottom: 0;
+    }
+
+    /* 3. CORREÇÃO: Tabela com Scroll Limitado (sem forçar scroll no corpo da página) */
+    .tabela-responsiva {
+        overflow-x: auto; /* Permite rolagem horizontal SOMENTE para a tabela */
+        -webkit-overflow-scrolling: touch;
+    }
+
+    #dadosTabela {
+        /* Garante que a tabela respeite a largura do seu wrapper (.tabela-responsiva) */
+        width: 100%; 
+    }
+    
+    #dadosTabela th, #dadosTabela td {
+        min-width: 100px; /* Garante um tamanho mínimo para cada coluna */
+        white-space: nowrap; /* Impede quebra de linha dentro da célula */
+        padding: 8px 6px;
+    }
+
+    #dadosTabela th {
+        background-color: #e0e0e0;
+    }
+}
+
+/* ============================================== */
+/* ========== FIM DO CSS RESPONSIVO ============= */
+/* ============================================== */
+
+.paginacao {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.paginacao button {
+    padding: 10px 15px;
+    margin: 0 5px;
+    border: 1px solid rgb(85,93,138);
+    background-color: white;
+    color: rgb(85,93,138);
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.paginacao button:hover:not(:disabled) {
+    background-color: rgb(85,93,138);
+    color: white;
+}
+
+.paginacao button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
