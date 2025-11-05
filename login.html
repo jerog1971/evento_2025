@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Biblioteca</title>
+    <link rel="stylesheet" href="style.css"> <link rel="icon" href="favicon_avelino.ico" type="image/x-icon">
+</head>
+<body>
+
+    <div class="login-container">
+        <div class="login-box">
+            <img src="logo.png" alt="Logo Biblioteca Avelino Antonio Vieira" class="logo-login">
+            <h2>Acesso ao Sistema</h2>
+
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="username">Usuário:</label>
+                    <input type="text" id="username" name="username" required placeholder="Digite seu nome de usuário">
+                </div>
+
+                <div class="input-group">
+                    <label for="password">Senha:</label>
+                    <input type="password" id="password" name="password" required placeholder="Digite sua senha">
+                </div>
+
+                <button type="submit" class="btn-login">Entrar</button>
+                <p id="erroLogin" class="hidden mensagem-erro"></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="login.js"></script> </body>
+</html>

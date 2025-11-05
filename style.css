@@ -221,3 +221,93 @@ h1 {
     cursor: not-allowed;
     opacity: 0.5;
 }
+
+/* ============================================== */
+/* === REGRAS ESPECÍFICAS PARA TELA DE LOGIN === */
+/* ============================================== */
+
+/* Ajuste no body para garantir que o login seja centralizado e sem padding extra */
+/* Se o seu body original já tem padding: 20px, ele pode empurrar o login para baixo. */
+/* Esta regra será aplicada APENAS quando o login.html for aberto, se ele não tiver classes específicas. */
+/* Se você puder adicionar uma classe 'login-page' ao body do login.html, seria melhor, mas vamos tentar sem primeiro. */
+
+.login-container {
+    /* Garante o foco no formulário de login */
+    width: 100%;
+    max-width: 400px;
+    /* Centraliza o bloco de login na vertical e horizontal, e adiciona um espaçamento da borda */
+    margin: 50px auto; 
+    padding: 0 15px; /* Pequeno padding lateral para telas pequenas */
+}
+
+.login-box {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.logo-login {
+    width: 70px; /* Tamanho ajustado para o login */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    font-weight: bold;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 12px;
+    background-color: rgb(85,93,138); /* Cor principal */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-login:hover {
+    background-color: blue; /* Cor de hover que você definiu */
+}
+
+.mensagem-erro {
+    color: red; 
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Se o seu body do index.html tiver padding: 20px; e você quiser que o login não tenha essa margem de 20px em mobile, você pode adicionar uma regra para o body em login.html */
+/* Se você for usar este CSS em AMBOS, considere adicionar uma classe 'login-page' ao <body> do login.html e mudar o body principal */
+/* Exemplo de como ficaria se você usasse uma classe: */
+/*
+.login-page body {
+    padding: 0;
+}
+*/
+
+/* Como não modificamos o body do index.html, vamos torcer para que o margin: 50px auto; no .login-container resolva o espaçamento no login */
